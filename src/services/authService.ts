@@ -48,10 +48,11 @@ export const loginUser = async (username: string, password: string) => {
       if (match) {
         return 'Login successful';
       } else {
-        throw new Error('Incorrect password');
+        return "Incorrect password";
+        // throw new Error('Incorrect password');
       }
     } else {
-      throw new Error('User not found');
+      return "User not found";
     }
   } catch (error) {
     console.error('Login error:', error);
